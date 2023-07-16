@@ -31,6 +31,13 @@ img{
   height: 100vh;
   flex-direction: column;
 }
+.sectionthree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  flex-direction: column;
+}
 .sectiontwo {
   display: flex;
   justify-content: center;
