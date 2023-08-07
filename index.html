@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="index.css"/>
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function register(){
             window.location = "https://app.localemail.app/register"
@@ -68,5 +69,25 @@
         document.addEventListener('DOMContentLoaded', hideElementIfVisible);
         window.addEventListener('scroll', hideElementIfVisible);
         window.addEventListener('resize', hideElementIfVisible);
+    </script>
+    <script>
+        function register() {
+            // Perform AJAX request
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.api-ninjas.com/v1/counter?id=visits&hit=true',
+                headers: { 'X-Api-Key': 'kXFUhG6JwexQNpi8fkKbew==sobPhrDexdpWbZf2' },
+                contentType: 'application/json',
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+
+            // Redirect the user to the registration page
+            window.location = "https://app.localemail.app/register";
+        }
     </script>
 </body>
