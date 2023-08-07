@@ -89,5 +89,25 @@
             // Redirect the user to the registration page
             window.location = "https://app.localemail.app/register";
         }
+
+        function makeAjaxRequest() {
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.api-ninjas.com/v1/counter?id=loaded&hit=true',
+                headers: { 'X-Api-Key': 'kXFUhG6JwexQNpi8fkKbew==sobPhrDexdpWbZf2' },
+                contentType: 'application/json',
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+        }
+
+        // Run the AJAX request when the page loads
+        $(document).ready(function() {
+            makeAjaxRequest();
+        });
     </script>
 </body>
